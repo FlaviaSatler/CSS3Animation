@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>One Page com Efeito Scroll</title>
+
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+
+        .bloco{
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .bloco img{
+            width: 40%;
+        }
+
+        .links{
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            display: flex;
+        }
+
+        .links label{
+            padding: 10px 0;
+            flex-grow: 1;
+            cursor: pointer;
+            transition: all .4s;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 100%;
+            color: #fff;
+        }
+
+        .links label:hover{
+            background-color: rgba(255,255,255, .2);
+        }   
+        
+        .scroll input{
+            display: none;
+        }
+
+        #nodejs{
+            background-color: #7fbd42;
+        }
+
+        #bootstrap{
+            background-color: #69f;
+        }
+
+        #sass{
+            background-color: #faa;
+        }
+
+        #ruby{
+            background-color: #CC342D;
+        }
+
+        #angular{
+            background-color: #414950;
+        }
+        .scroll{
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sections{
+            transition: all .4s;
+        }
+
+        #rd_bootstrap:checked ~ .sections{
+            margin-top: -100vh;
+        }
+
+         #rd_sass:checked ~ .sections{
+            margin-top: -200vh;
+        }
+
+         #rd_ruby:checked ~ .sections{
+            margin-top: -300vh;
+        }
+
+         #rd_angular:checked ~ .sections{
+            margin-top: -400vh;
+        }
+    </style>
+</head>
+<body>
+    <nav class="links">
+        <label for="rd_nodejs">Node JS</label>
+        <label for="rd_bootstrap">Bootstrap</label>
+        <label for="rd_sass">SASS</label>
+        <label for="rd_ruby">Ruby</label>
+        <label for="rd_angular">Angular JS</label>
+    </nav>
+
+    <div class="scroll">
+        <input type="radio" name="grupo" id="rd_nodejs" checked="TRUE">
+        <input type="radio" name="grupo" id="rd_bootstrap">
+        <input type="radio" name="grupo" id="rd_sass">
+        <input type="radio" name="grupo" id="rd_ruby">
+        <input type="radio" name="grupo" id="rd_angular">
+    
+    <section class="sections">
+        <section class="bloco" id="nodejs"><img src="img/nodejs.png" alt=""></section>
+        <section class="bloco" id="bootstrap"><img src="img/bootstrap.png" alt=""></section>
+        <section class="bloco" id="sass"><img src="img/sass.png" alt=""></section>
+        <section class="bloco" id="ruby"><img src="img/ruby.png" alt=""></section>
+        <section class="bloco" id="angular"><img src="img/angular.png" alt=""></section>
+    </section>
+    
+    </div>
+</body>
+</html>

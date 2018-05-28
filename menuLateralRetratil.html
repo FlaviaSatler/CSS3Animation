@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu Lateral Retrátil</title>
+
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+
+        body{
+            background-color: #fcf4e3;
+        }
+
+        #check{
+            display: none;
+        }
+
+        #icone{
+            cursor: pointer;
+            padding: 25px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .barra{
+            background-color: #333;
+            height: 100%;
+            width: 300px;
+            position: absolute;
+            transition: all .2s linear;
+            left: -300px;
+        }
+
+        nav{
+            width: 100%;
+            position: absolute;
+            top: 60px;
+        }
+
+        nav a{
+            text-decoration: none;
+        }
+
+        .link{
+            background-color: #494950;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 12pt;
+            transition: all .2 linear;  
+            color: #f4f4f9;
+            border-bottom: 2px solid #222;  
+            opacity: 0;
+            margin-top: 200px;
+        }
+
+        .link:hover{
+            background-color: #050542;
+        }
+
+        #check:checked ~ .barra{
+            transform: translate(300px);
+        }
+
+        #check:checked ~ .barra nav a .link{
+            opacity: 1;
+            margin-top: 0;
+            transition-delay: .2s;
+        }
+    </style>
+
+</head>
+<body>
+    <input type="checkbox" id="check">
+    <label for="check" id="icone"><img src="img/hamburguinho.png" alt="">
+    </label>
+
+    <div class="barra">
+        <nav>
+            <a href="#"><div class="link">Home</div></a>
+            <a href="#"><div class="link">Tutoriais</div></a>
+            <a href="#"><div class="link">Downloads</div></a>
+            <a href="#"><div class="link">Eventos</div></a>
+            <a href="#"><div class="link">Contato</div></a>
+        </nav>
+    </div>
+</body>
+</html>
